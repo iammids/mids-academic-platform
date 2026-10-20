@@ -1,3 +1,4 @@
+
 @import 'tailwindcss';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -6,4 +7,351 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+:root {
+    --green: #198754;
+    --green-dark: #12653e;
+    --green-light: #eaf7ef;
+    --background: #f7faf8;
+    --white: #ffffff;
+    --text: #202b24;
+    --muted: #78847c;
+    --border: #e5ece7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 245px;
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    padding: 28px 20px;
+    flex-shrink: 0;
+}
+
+.brand {
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--green);
+    margin-bottom: 8px;
+}
+
+.brand-subtitle {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 36px;
+}
+
+.menu-label {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 24px 12px 12px;
+}
+
+.menu a {
+    display: block;
+    padding: 12px;
+    margin-bottom: 6px;
+    color: #657168;
+    text-decoration: none;
+    border-radius: 9px;
+    font-size: 14px;
+}
+
+.menu a.active,
+.menu a:hover {
+    background: var(--green-light);
+    color: var(--green-dark);
+}
+
+.main {
+    flex: 1;
+    min-width: 0;
+    padding: 32px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.topbar h1 {
+    font-size: 26px;
+    margin-bottom: 7px;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--white);
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+.avatar {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--green-light);
+    color: var(--green-dark);
+    font-weight: bold;
+}
+
+.welcome {
+    padding: 28px;
+    background: linear-gradient(120deg, #198754, #2caa70);
+    border-radius: 18px;
+    color: white;
+    margin-bottom: 28px;
+}
+
+.welcome h2 {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 0.92;
+    max-width: 550px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.section-heading h2 {
+    font-size: 18px;
+}
+
+.section-heading span {
+    color: var(--green);
+    font-size: 13px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.stat-label {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.stat-note {
+    color: var(--green);
+    font-size: 12px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(250px, 1fr);
+    gap: 20px;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.task:last-child {
+    border-bottom: none;
+}
+
+.task-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    background: var(--green-light);
+    border-radius: 11px;
+    font-size: 19px;
+}
+
+.task-info {
+    flex: 1;
+}
+
+.task-info h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.task-info p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.tag {
+    background: #fff3dc;
+    color: #95620a;
+    padding: 6px 9px;
+    border-radius: 7px;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.schedule-item {
+    display: flex;
+    gap: 14px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+.schedule-time {
+    min-width: 65px;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.schedule-info h3 {
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.schedule-info p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+@media (max-width: 1100px) {
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .layout {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .brand-subtitle {
+        margin-bottom: 16px;
+    }
+
+    .menu-label {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+    }
+
+    .menu a {
+        white-space: nowrap;
+        margin: 0;
+    }
+
+    .main {
+        padding: 20px 16px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+    }
+
+    .topbar h1 {
+        font-size: 22px;
+    }
+
+    .profile {
+        padding: 7px;
+    }
+
+    .profile-name {
+        display: none;
+    }
+
+    .welcome {
+        padding: 22px;
+    }
+
+    .stats {
+        gap: 10px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .stat-value {
+        font-size: 24px;
+    }
+
+    .task {
+        flex-wrap: wrap;
+    }
 }
